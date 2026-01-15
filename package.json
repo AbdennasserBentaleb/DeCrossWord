@@ -1,0 +1,22 @@
+{
+  "name": "crossword",
+  "version": "1.0.0",
+  "description": "![Crossword App Concept](https://via.placeholder.com/800x400.png?text=German+Learning+Crossword+App)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "test": "vitest run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/node": "^25.3.2",
+    "jsdom": "^28.1.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1",
+    "vitest": "^4.0.18"
+  }
+}

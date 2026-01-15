@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>German Crossword Trainer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Outfit:wght@600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="src/style.css">
+</head>
+
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>German Crossword Trainer</h1>
+      <div class="actions">
+        <button id="generateBtn">Generate</button>
+        <button id="checkBtn">Check Puzzle</button>
+        <button id="checkWordBtn">Check Word</button>
+        <button id="checkLetterBtn">Check Letter</button>
+        <button id="revealClueBtn">Reveal Clue</button>
+        <button id="revealLetterBtn">Reveal Letter</button>
+        <button id="hintBtn">Hint</button>
+        <button id="speakBtn">Pronounce</button>
+        <button id="saveBtn">Save</button>
+        <button id="loadBtn">Load</button>
+        <button id="exportJsonBtn">Export JSON</button>
+        <button id="printBtn">Print</button>
+        <label class="csv"><input id="importJson" type="file" accept=".json"> Import JSON</label>
+        <button id="copyLinkBtn">Copy Link</button>
+        <button id="clearBtn">Clear</button>
+      </div>
+      <div class="meta">
+        <input id="puzzleTitle" placeholder="Title">
+        <input id="puzzleAuthor" placeholder="Author">
+        <input id="puzzleDate" type="date">
+      </div>
+    </header>
+    <main class="app-main">
+      <section class="left">
+        <label for="wordInput">Enter words with clues</label>
+        <textarea id="wordInput" placeholder="Haus : house\nBaum : tree\nlernen : to learn"></textarea>
+        <div class="form-controls">
+          <div class="form-actions">
+            <button id="addRowBtn" type="button">Add Row</button>
+            <button id="clearRowsBtn" type="button">Clear Rows</button>
+            <label class="csv">
+              <input id="importCsv" type="file" accept=".csv"> Import CSV
+            </label>
+          </div>
+          <table class="entry-form">
+            <thead>
+              <tr>
+                <th>Word</th>
+                <th>Clue</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="formBody"></tbody>
+          </table>
+        </div>
+        <div class="options">
+          <label>Grid size
+            <select id="gridSize">
+              <option value="13">13 x 13</option>
+              <option value="15" selected>15 x 15</option>
+              <option value="17">17 x 17</option>
+              <option value="21">21 x 21</option>
+            </select>
+          </label>
+          <label><input type="checkbox" id="allowIsolated" checked> Allow non-crossing placements</label>
+          <label><input type="checkbox" id="themeToggle"> Light theme</label>
+          <label><input type="checkbox" id="textToggle"> Larger text</label>
+        </div>
+      </section>
+      <section class="center">
+        <div id="grid" class="grid" role="grid" aria-label="Crossword grid"></div>
+      </section>
+      <section class="right">
+        <div class="clues">
+          <div class="meta-display">
+            <div id="metaTitle"></div>
+            <div id="metaAuthorDate"></div>
+          </div>
+          <h2>Across</h2>
+          <ol id="acrossList" class="clue-list"></ol>
+          <h2>Down</h2>
+          <ol id="downList" class="clue-list"></ol>
+        </div>
+      </section>
+    </main>
+    <footer class="app-footer">
+      <div id="status" class="status" aria-live="polite"></div>
+      <div id="timer" class="timer"></div>
+    </footer>
+    <div id="virtualKeyboard" class="virtual-keyboard"></div>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
