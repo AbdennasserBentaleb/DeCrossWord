@@ -1,6 +1,5 @@
 # German Learning Crossword Generator
 
-![Crossword App Concept](https://via.placeholder.com/800x400.png?text=German+Learning+Crossword+App)
 
 A full client side dynamic German vocabulary crossword generator. Input German words and their English clues, and the application generates a playable puzzle.
 
